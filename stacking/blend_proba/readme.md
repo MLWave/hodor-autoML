@@ -1,6 +1,6 @@
 # hd.stacking.blend_proba
 
-    function hd.stacking.blend_proba(*clf, X_train, y, X_test, nfolds=5, save_preds="", save_test_only="",save_params="", clf_name="XX", generalizers_params=[], minimal_loss=0,return_score=False,minimizer="log_loss"*)
+function hd.stacking.blend_proba(*clf, X_train, y, X_test, nfolds=5, save_preds="", save_test_only="",save_params="", clf_name="XX", generalizers_params=[], minimal_loss=0,return_score=False,minimizer="log_loss"*)
 ___
 
 A Cross-Validated Blender.
@@ -45,9 +45,10 @@ Finally it creates the predictions for the test set from the entire training set
 
 ## Sample Usage
 
-```clf = hd.get_generalizer2("Random")
-X_train, X_test = hd.scale_data(clf,X_train,X_test)
-_,_,score = hd.blend_proba(clf,X_train,y,X_test,return_score=True,minimizer="accuracy",save_params="kaggle_mystery\\stack\\",save_preds="kaggle_mystery\\stack\\")```
+    clf = hd.get_generalizer2("Random")
+    X_train, X_test = hd.scale_data(clf,X_train,X_test)
+    _,_,score = hd.blend_proba(clf,X_train,y,X_test,return_score=True)
+    print score
 
 ## References:
 
